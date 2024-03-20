@@ -1,7 +1,7 @@
 {
-  "name": "sassdoc-extras",
+  "name": "@kobedev/sassdoc-extras",
   "description": "SassDoc's Toolbelt",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "keywords": [
     "sassdoc",
     "index",

@@ -8,7 +8,7 @@ module.exports = function markdown (ctx) {
    * problem with `map` additional arguments.
    */
   function md (str) {
-    return marked(str)
+    return marked.parse(str)
   }
 
   /**
@@ -35,23 +35,23 @@ module.exports = function markdown (ctx) {
 
   ctx.data.forEach(function (item) {
     if ('description' in item) {
-      item.description = marked(item.description)
+      item.description = marked.parse(item.description)
     }
 
     if ('output' in item) {
-      item.output = marked(item.output)
+      item.output = marked.parse(item.output)
     }
 
     if ('content' in item && item.content.description) {
-      item.content.description = marked(item.content.description)
+      item.content.description = marked.parse(item.content.description)
     }
 
     if ('return' in item && item.return.description) {
-      item.return.description = marked(item.return.description)
+      item.return.description = marked.parse(item.return.description)
     }
 
     if ('deprecated' in item) {
-      item.deprecated = marked(item.deprecated)
+      item.deprecated = marked.parse(item.deprecated)
     }
 
     if ('author' in item) {
@@ -84,7 +84,7 @@ module.exports = function markdown (ctx) {
 
     if ('groupDescriptions' in item) {
       for (let k of Object.keys(item.groupDescriptions)) {
-        item.groupDescriptions[k] = marked(item.groupDescriptions[k])
+        item.groupDescriptions[k] = marked.parse(item.groupDescriptions[k])
       }
     }
   })
